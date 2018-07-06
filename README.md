@@ -12,4 +12,4 @@ daily practice
 		g.drawString(sb.charAt(i) + "", i*width/4, height - 5);
 		因为sb.toString()是当前的文本 相当于第一个字符画了四遍， 第二个字符画了三遍...
 ## 添加了运行效果截图
-![])(https://github.com/hongBUG/java_practice/raw/master/image/verify.png) 
+![](https://github.com/hongBUG/java_practice/raw/master/image/verify.png) 
