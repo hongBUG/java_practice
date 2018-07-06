@@ -29,8 +29,9 @@ public class VerifyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		VerifyCode vc = new VerifyCode();
+		VerifyCode.output(vc.getImage(), response.getOutputStream());
+//		System.out.println(vc.getText());
 		request.getSession().setAttribute("text", vc.getText());
-		VerifyCode.output(vc.createImage(), response.getOutputStream());
 	}
 
 	/**

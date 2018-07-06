@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 		String code = request.getParameter("code");
 		if (!code.equalsIgnoreCase((String)request.getSession().getAttribute("text"))){
 			request.setAttribute("msg", "验证码输入错误");
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/java_practice/login.jsp").forward(request, response);
 			return;
 		}
 		request.setCharacterEncoding("utf-8");
@@ -52,10 +52,10 @@ public class LoginServlet extends HttpServlet {
 			response.addCookie(cookie);
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
-			response.sendRedirect("/succ1.jsp");
+			response.sendRedirect("/java_practice/succ1.jsp");
 		} else {
 			request.setAttribute("msg", "用户名或密码错误");
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/java_practice/login.jsp").forward(request, response);
 		}
 	}
 

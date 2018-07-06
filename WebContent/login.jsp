@@ -8,7 +8,7 @@
 <script type="text/javascript">
 	function _change(){
 		var imgEle = document.getElementById("img");
-		imgEle.src="VerifyServlet?a=" + new Date().getTime();
+		imgEle.src="/java_practice/VerifyServlet?a=" + new Date().getTime();
 	}
 </script>
 </head>
@@ -28,11 +28,11 @@
 %>
 	<font color="red"><b><%=msg %></b></font>
 <%} %>
-	<form action="/LoginServlet" method="post">
+	<form action="/java_practice/LoginServlet" method="post">
 		用户名：<input type="text" name="username" value="<%= username%>"></br>
 		密码：<input type="password" name="password" ></br>
 		验证码：<input type="text" name="code" size="4" />
-		<img id="img" src="/VerifyServlet" />
+		<img id="img" src="/java_practice/VerifyServlet" />
 		<a href="javascript: _change()">换一张</a></br>
 		<input type="submit" name="submit" value="提交">
 	</form>

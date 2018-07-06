@@ -34,9 +34,10 @@ public class VerifyCode {
 			sb.append(randomChar()); // 调用产生随机字符的方法， 随机生成一个字符  并添加到sb后面
 			g.setFont(randomFont()); // 调用产生随机字体
 			g.setColor(randomColor()); // 调用产生随机颜色方法 生成随机颜色
-			g.drawString(sb.toString(), i*width/4, height - 5); // 在图片中绘制文本
+			g.drawString(sb.charAt(i) + "", i*width/4, height - 5); // 在图片中绘制文本
 		}
 		this.text=sb.toString();// 把生成的字符串赋值给文本
+		System.out.println("back: " + text);
 		drawLine(image); // 调用添加干扰线的方法对图片中的文本进行干扰
 		return image;
 	}
@@ -44,7 +45,7 @@ public class VerifyCode {
 	/**
 	 * 创建图片缓冲区(背景图)
 	 */
-	public BufferedImage createImage() {
+	private BufferedImage createImage() {
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
 		g.setColor(bgColor);
@@ -55,14 +56,14 @@ public class VerifyCode {
 	/**
 	 * 生成随机字符的方法
 	 */
-	public char randomChar() {
+	private char randomChar() {
 		int index = r.nextInt(codes.length());
 		return codes.charAt(index);
 	}
 	/**
 	 * 生成随机字体
 	 */
-	public Font randomFont() {
+	private Font randomFont() {
 		int index = r.nextInt(fontNames.length);
 		int style = r.nextInt(4); // 设置字体样式，0表示无样式，1表示粗体，2表示斜体 3表示粗体加斜体 
 		int size = r.nextInt(4) + 24;
@@ -71,7 +72,7 @@ public class VerifyCode {
 	/**
 	 * 生成随机颜色
 	 */
-	public Color randomColor() {
+	private Color randomColor() {
 		int red = r.nextInt(255);
 		int green = r.nextInt(255);
 		int blue = r.nextInt(255);
@@ -80,7 +81,7 @@ public class VerifyCode {
 	/**
 	 * 生成干扰线
 	 */
-	public void drawLine(BufferedImage image) {
+	private void drawLine(BufferedImage image) {
 		// 取画笔 画线  画三条
 		Graphics g = image.getGraphics();
 		for(int i = 0; i < 3; i++) {
