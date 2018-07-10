@@ -24,3 +24,10 @@ daily practice
 > demo7(): 通过java反射机制调用类中的方法  有参 无参
 > demo8(): 通过java反射机制获得类加载器
 ![](https://github.com/hongBUG/java_practice/raw/master/image/reflect.png) 
+
+## 18.7.11 java连接MongoDB相关操作
+> 创建/连接数据库 
+> 创建集合
+> 选择集合  
+> 集合中存的对象都是文档(org.bson.Document)形式  官方说法为bson 和json几乎一样
+> 对数据库的操作 增删改查 查通过游标进行访问
